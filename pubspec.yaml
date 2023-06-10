@@ -1,0 +1,51 @@
+name: getx_architecture
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  dio:
+  intl: ^0.17.0
+  logger: ^1.1.0
+  shared_value: ^3.0.0
+  image_picker: ^0.8.7
+  lottie: ^1.4.3
+  google_fonts: ^3.0.1
+  flutter_easyloading: ^3.0.5
+  percent_indicator: ^4.2.2
+  delayed_display: ^2.0.0
+  firebase_core: ^2.13.0
+  firebase_crashlytics: ^3.3.1
+  firebase_messaging: ^14.6.1
+  cached_network_image: ^3.2.2
+  flutter_secure_storage: ^6.0.0
+  flutter_svg: ^2.0.3
+  shimmer: ^2.0.0
+  connectivity_plus: ^3.0.2
+  flutter_screenutil: ^5.7.0
+
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+
+
+flutter: 
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/images/
+    - assets/svg/
+    - assets/lottie/
+    - assets/png/
+
