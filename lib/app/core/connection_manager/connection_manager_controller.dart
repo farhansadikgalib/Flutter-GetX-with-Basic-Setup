@@ -4,9 +4,9 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 
-import '../../core/constants/app_constants.dart';
-import '../../core/widgets/app_widgets.dart';
+import '../../components/custom_snackbar.dart';
 import 'connection_type.dart';
 
 class ConnectionManagerController extends GetxController {
@@ -39,7 +39,7 @@ class ConnectionManagerController extends GetxController {
       connectivityResult = await (_connectivity.checkConnectivity());
     } on PlatformException catch (e) {
       if (kDebugMode) {
-        logger.d("PlatformException: $e");
+        Logger().d("PlatformException: $e");
       }
     }
     return _updateState(connectivityResult);
@@ -52,23 +52,26 @@ class ConnectionManagerController extends GetxController {
         isInternetConnected.value = true;
         connectedStatusMessage.value = "Wifi Connected";
         break;
+
       case ConnectivityResult.mobile:
         connectionType.value = ConnectionType.mobileData;
         isInternetConnected.value = true;
-
         connectedStatusMessage.value = "Mobile Data Connected";
-
         break;
+
       case ConnectivityResult.none:
         connectionType.value = ConnectionType.noInternet;
         isInternetConnected.value = false;
-
         connectedStatusMessage.value = "No Internet Connection";
         break;
+        
       default:
-        AppWidgets().getSnackBar(
-            title: 'Error', message: 'Failed to get connection type');
+        CustomSnackBar.showCustomErrorSnackBar(
+          title: 'Error',
+          message: 'Failed to get connection type',
+        );
         break;
     }
   }
+
 }

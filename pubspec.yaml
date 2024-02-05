@@ -1,51 +1,61 @@
-name: getx_architecture
+name: getx_template
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
-  sdk: '>=2.19.6 <3.0.0'
+environment:
+  sdk: ">=3.2.2 <4.0.0"
 
-dependencies: 
-  cupertino_icons: ^1.0.2
-  get: 4.6.5
-  dio:
-  intl: ^0.17.0
-  logger: ^1.1.0
-  shared_value: ^3.0.0
-  image_picker: ^0.8.7
-  lottie: ^1.4.3
-  google_fonts: ^3.0.1
-  flutter_easyloading: ^3.0.5
-  percent_indicator: ^4.2.2
-  delayed_display: ^2.0.0
-  firebase_core: ^2.13.0
-  firebase_crashlytics: ^3.3.1
-  firebase_messaging: ^14.6.1
-  cached_network_image: ^3.2.2
-  flutter_secure_storage: ^6.0.0
-  flutter_svg: ^2.0.3
-  shimmer: ^2.0.0
-  connectivity_plus: ^3.0.2
-  flutter_screenutil: ^5.7.0
+dependencies:
+  cupertino_icons: ^1.0.6
 
-  flutter: 
+  get: ^4.6.6 # for state management, dependency injection, routing, context less stuff and much more
+
+  logger: ^2.0.2+1 # log events in clear way instead of (print)
+
+  flutter_screenutil: ^5.9.0 # make app responsive
+
+  dio: ^5.4.0 # for network calls
+  http_mock_adapter: ^0.6.1 # mocking dio for testing
+  pretty_dio_logger: ^1.3.1 # for dio api logging and debugging
+
+  hive: ^2.2.3 # local database (SQFlite replacement)
+  hive_flutter: ^1.1.0 # make it easy to use hive (no need for path provider)
+  shared_preferences: ^2.2.2 # shared preferences persistence key value store
+
+  firebase_core: ^2.24.2 # to initialize firebase services
+  firebase_messaging: ^14.7.10 # fcm services
+  awesome_notifications: ^0.9.1 # notifications services (will be used for fcm)
+
+  connectivity_plus: ^5.0.2 # check internet connection
+
+  flutter_easyloading: ^3.0.5 # loading indicator
+  shimmer: ^3.0.0 # for shimmer effect
+
+  google_fonts: ^6.1.0 # for using google fonts
+  flutter_svg: ^2.0.9 # for svg images
+  image_picker: ^1.0.7 # for picking images from gallery or camera
+
+  url_launcher: ^6.2.3 # for launching urls
+
+  flutter_launcher_icons: # change app icon
+  change_app_package_name: # change package name
+  rename_app: # rename app
+
+  flutter:
     sdk: flutter
 
-dev_dependencies: 
-  flutter_lints: ^2.0.0
-  flutter_test: 
+dev_dependencies:
+  flutter_lints: 3.0.1 # lints for flutter
+  build_runner:  # generate dart files
+  hive_generator: # generate hive files
+
+  flutter_test:
     sdk: flutter
 
-
-
-flutter: 
+flutter:
   uses-material-design: true
-  generate: true
-  assets:
-    - assets/
-    - assets/icons/
-    - assets/images/
-    - assets/svg/
-    - assets/lottie/
-    - assets/png/
 
+  assets:
+    - assets/images/
+    - assets/vectors/
+    - assets/lottie/

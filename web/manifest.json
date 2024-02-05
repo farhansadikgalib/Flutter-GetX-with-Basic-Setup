@@ -1,6 +1,6 @@
 {
-    "name": "businesscard",
-    "short_name": "businesscard",
+    "name": "getx_template",
+    "short_name": "getx_template",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
